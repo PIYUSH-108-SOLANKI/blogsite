@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Be Blogger | Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f0;
+    }
+
+    a {
+      color: #151111;
+    }
+
+    .navbar {
+      height: 70px;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .brandname h1 {
+      font-style: italic;
+      font-weight: bolder;
+      color: #090808;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #d35400;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #090808;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        height: calc(100vh - 70px);
+        background: linear-gradient(to right, #ffecd2, #fcb69f);
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 20px;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .hero-section {
+      background-image: url('https://plus.unsplash.com/premium_photo-1720744786849-a7412d24ffbf?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmxvZ3xlbnwwfHwwfHx8MA%3D%3D');
+      height: 700px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff8f0;
+      position: relative;
+    }
+    @keyframes example  {
+            from{
+                top: 10px;
+                background-color: orange;
+            }
+            to{
+                top: 200px;
+                background-color: green;
+            }
+        }
+
+    .hero-text {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 10px;
+          animation-name: example;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+
+    .cards{
+          display: flex;
+          overflow-x: auto;
+          gap: 16px;
+          padding: 10px;
+          scroll-behavior: smooth;
+
+    }
+    .card1{
+          flex: 0 0 auto; 
+          width: 300px;   
+          background: peachpuff;
+          border-radius: 20px;
+          padding: 20px;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+          overflow: auto;
+          height: 200px;
+    }
+
+    .footer-content {
+      background-color: #ffe0b2;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .footer-content h3 {
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="brandname">
+      <h1>Be Blogger</h1>
+    </div>
+    <div class="logo">
+      <img src="logo.png" alt="logo">
+    </div>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#about-section">About</a>
+
+    </div>
+  </nav>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
+
+  <div class="hero-section">
+    <div class="hero-text">
+      <h1>Welcome to Be Blogger</h1>
+      <p>Your space to share stories, tips & inspiration</p>
+    </div>
+  </div>
+<div class="cards">
+    <div class="card1">
+        <h3>india vs pakisan</h3>
+        <p>Since the partition of British India in 1947 and subsequent creation of the dominions of India and Pakistan, the two countries have been involved in a number of wars, conflicts, and military standoffs. A long-running dispute over Kashmir and cross-border terrorism have been the predominant cause of conflict between the two states, with the exception of the Indo-Pakistani War of 1971, which occurred as a direct result of hostilities stemming from the Bangladesh Liberation War in erstwhile East Pakistan (now Bangladesh).</p>
+    </div>
+    <div class="card1">
+        <h3>Social media </h3>
+        <p>Social media are interactive technologies that facilitate the creation, sharing and aggregation of content (such as ideas, interests, and other forms of expression) amongst virtual communities and networks.[1][2] Common features include:[2]
+
+Online platforms that enable users to create and share content and participate in social networking.[2][3][4]
+User-generated content—such as text posts or comments, digital photos or videos, and data generated through online interactions.[2][3]
+Service-specific profiles that are designed and maintained by the social media organization.[2][5]
+Social media helps the development of online social networks by connecting a user's profile with those of other individuals or groups.[2][5]</p>
+    </div>
+    <div class="card1">
+        <h3>margret hamilton</h3>
+        <p>Margaret Hamilton (December 9, 1902 – May 16, 1985) was an American entertainer and educator, with a fifty-year career in entertainment spanning theater, film, radio and television. She was best known for her portrayal of the Wicked Witch of the West and her Kansas counterpart Almira Gulch in the 1939 Metro-Goldwyn-Mayer film The Wizard of Oz. A former schoolteacher, she worked as a character actress in films for seven years before she was offered the role that defined her public image. In later years, Hamilton appeared in films and made frequent cameo appearances on television sitcoms and commercials. She also gained recognition for her work as an advocate of causes designed to benefit children and animals and retained a lifelong commitment to public education. This photograph shows Hamilton as Miss Eddels in Sid and Marty Krofft's Sigmund and the Sea Monsters c. 1973.</p>
+    </div>
+
+    <div class="card1">
+        <h3>Rolling </h3>
+        <p>The Rolling Stones
+Chapman gained valuable drumming experience as part of the Cliftons in 1960, a band headed by Bill Wyman. He also jammed with an early line-up of the Rolling Stones before they settled on their permanent band members. He appeared with the band in 1962, including a performance at Sidcup Art College, Bexley, which Keith Richards had attended. Chapman is among several drummers proposed to have possibly been the one to play with the band at their first official performance of on 12 July 1962 at the Marquee Club in London. Chapman himself has denied that he played the gig. He was the drummer for their first studio sessions on 27 October 1962, when the band recorded covers of the songs "You Can't Judge a Book by the Cover", "Soon Forgotten", and "Close Together". An acetate disc of the recordings once owned by Chapman was sold to a private collector in 1988 at auction.[2] Chapman was often unavailable for rehearsals and gigs as he was a salesman, so the band brought in Steve Harris as a replacement on occasion.[3]
+
+Chapman was the person through whom Wyman was enlisted to the Stones. It was Chapman who made inquiries about vacancies with the Stones and discovered they might be found at the Wetherby Arms on the King's Road, Chelsea. He and Wyman turned up for a run-through and although they had doubts about the blues style and did not like the name, agreed to join. Another drummer, Steve Harris, also sat in for some sessions. Chapman felt that he did not fit in with the way-out approach, of the group for the time and left to play drums for the Alphabeats before leaving to form a band called The Preachers. Wyman remained with the Rolling Stones, when Charlie Watts took over as their permanent drummer.[4]</p>
+    </div>
+    <div class="card1">
+        <h3>Rolling </h3>
+        <p>The Rolling Stones
+Chapman gained valuable drumming experience as part of the Cliftons in 1960, a band headed by Bill Wyman. He also jammed with an early line-up of the Rolling Stones before they settled on their permanent band members. He appeared with the band in 1962, including a performance at Sidcup Art College, Bexley, which Keith Richards had attended. Chapman is among several drummers proposed to have possibly been the one to play with the band at their first official performance of on 12 July 1962 at the Marquee Club in London. Chapman himself has denied that he played the gig. He was the drummer for their first studio sessions on 27 October 1962, when the band recorded covers of the songs "You Can't Judge a Book by the Cover", "Soon Forgotten", and "Close Together". An acetate disc of the recordings once owned by Chapman was sold to a private collector in 1988 at auction.[2] Chapman was often unavailable for rehearsals and gigs as he was a salesman, so the band brought in Steve Harris as a replacement on occasion.[3]
+
+Chapman was the person through whom Wyman was enlisted to the Stones. It was Chapman who made inquiries about vacancies with the Stones and discovered they might be found at the Wetherby Arms on the King's Road, Chelsea. He and Wyman turned up for a run-through and although they had doubts about the blues style and did not like the name, agreed to join. Another drummer, Steve Harris, also sat in for some sessions. Chapman felt that he did not fit in with the way-out approach, of the group for the time and left to play drums for the Alphabeats before leaving to form a band called The Preachers. Wyman remained with the Rolling Stones, when Charlie Watts took over as their permanent drummer.[4]</p>
+    </div>
+    <div class="card1">
+        <h3>margret hamilton</h3>
+        <p>Margaret Hamilton (December 9, 1902 – May 16, 1985) was an American entertainer and educator, with a fifty-year career in entertainment spanning theater, film, radio and television. She was best known for her portrayal of the Wicked Witch of the West and her Kansas counterpart Almira Gulch in the 1939 Metro-Goldwyn-Mayer film The Wizard of Oz. A former schoolteacher, she worked as a character actress in films for seven years before she was offered the role that defined her public image. In later years, Hamilton appeared in films and made frequent cameo appearances on television sitcoms and commercials. She also gained recognition for her work as an advocate of causes designed to benefit children and animals and retained a lifelong commitment to public education. This photograph shows Hamilton as Miss Eddels in Sid and Marty Krofft's Sigmund and the Sea Monsters c. 1973.</p>
+    </div>
+
+
+</div>
+  
+  <footer id="about-section">
+    <div class="footer-content">
+      <h3>Thanks for Visiting Be Blogger!</h3>
+      <p>&copy; 2025 Be Blogger. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
